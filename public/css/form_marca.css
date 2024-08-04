@@ -1,0 +1,151 @@
+@import url("/css/colores.css");
+
+* {
+  box-sizing: border-box;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: var(--color-fondo);
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.father {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+}
+
+.form_container {
+  border-radius: 0.5rem;
+  border: 2px solid black;
+  background-color: var(--color-nav);
+  color: white;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  width: 100%;
+  max-width: 32rem;
+  margin: 50px;
+}
+
+.div_form_title {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+  padding: 1.5rem;
+}
+
+.form_title {
+  white-space: nowrap;
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  text-align: center;
+}
+
+.form_body {
+  padding: 1.5rem;
+  display: grid;
+  gap: 1.5rem;
+}
+
+.form_grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.form_group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.input_title {
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1;
+  color: white;
+  cursor: not-allowed;
+  opacity: 1;
+}
+
+.input_text {
+  height: 2.5rem;
+  width: 100%;
+  border-radius: 0.375rem;
+  border: 1px solid #d1d5db;
+  background-color: var(--color-input);
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+  color: white;
+  transition: outline 0.2s;
+}
+
+.confirmButton {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.botonRegistrar,
+.botonCancelar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  border-radius: 0.375rem;
+  border: 1px solid white;
+  font-size: 0.875rem;
+  font-weight: 500;
+  background-color: var(--color-input);
+  color: #ffffff;
+  padding: 0.5rem 1rem;
+  transition: background-color 0.2s;
+  margin: 10px;
+  text-decoration: none;
+}
+
+.errorForm {
+  color: red;
+  font-weight: bold;
+}
+
+@media (max-width: 350px) {
+  .form_container {
+    width: 80%;
+  }
+
+  .form_title {
+    width: 100%;
+    white-space: inherit;
+  }
+}
+
+@media (min-width: 2000px) {
+  .form_title {
+    font-size: 2rem;
+  }
+
+  .input_title {
+    font-size: 1.5rem;
+  }
+
+  .input_text {
+    height: 3.5rem;
+    font-size: 1.5rem;
+  }
+
+  .form_container {
+    max-width: 50rem;
+  }
+
+  .botonCancelar,
+  .botonRegistrar {
+    font-size: 1.5rem;
+    padding: 1rem 2rem;
+  }
+}

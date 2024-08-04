@@ -1,0 +1,94 @@
+<header class="header">
+    <div class="left_header">
+        <img src="/Images/logo.png" alt="logo" class="logo_image">
+        <span class="web_title">
+            World Padel Store
+        </span>
+    </div>
+    <div class="right_header">
+        <button class="button home_button">
+            <a href="/"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                    stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+                </svg></a>
+        </button>
+        <div class="cartIconDiv">
+            <div class="containerIconCart">
+                <button class="button" id="button_cart">
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="8" cy="21" r="1"></circle>
+                        <circle cx="19" cy="21" r="1"></circle>
+                        <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12">
+                        </path>
+                    </svg>
+                </button>
+                <div class="countProducts">
+                    <span class="productsCounter">0</span>
+                </div>
+            </div>
+            <div class="divCart">
+                <div class="hiddenCartElements hideElements">
+                    <div class="rowProducts hidden">
+                        <div class="cartTitle">
+                            <p class="titleCart">Tu Carrito</p>
+                        </div>
+                        <div class="cartProducts">
+                        </div>
+                        <div class="cartTotal hidden">
+                            <h3>Total:</h3>
+                            <span class="totalPayment">0</span><span>€</span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="button" id="button_search">
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <path d="m21 21-4.3-4.3"></path>
+            </svg>
+        </button>
+        <button class="button" id="button_list">
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="4" x2="20" y1="12" y2="12"></line>
+                <line x1="4" x2="20" y1="6" y2="6"></line>
+                <line x1="4" x2="20" y1="18" y2="18"></line>
+            </svg>
+
+        </button>
+        <button class="button">
+            <a href="/formularioMarca">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                </svg>
+            </a>
+        </button>
+    </div>
+
+</header>
+
+<div class="div_extra_header">
+    <div class="search_input">
+        <input type="text" name="searchInput" class="search_input_text" id="buscador"
+            placeholder="Escriba para filtrar y pulse ENTER para acceder a lo buscado" ;>
+        <div class="div_error_search">
+            <small class="error_search"></small>
+        </div>
+    </div>
+    <div class="brands_list">
+        {{#values}}
+        <a href="/{{brandName}}" class="list_brand">{{brandName}}</a>
+        {{/values}}
+    </div>
+</div>
+
+
+<script type="module" src="/script/scriptNav.js"></script>
+<script type="module" src="/script/scriptBarraBusqueda.js"> </script>

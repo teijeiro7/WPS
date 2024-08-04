@@ -1,0 +1,76 @@
+@import url("/css/colores.css");
+
+* {
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--color-fondo);
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.padre {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 300px;
+    align-content: center;
+    margin-top: 80px;
+}
+
+.confirm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--color-nav);
+    align-items: center;
+    width: 80%;
+    border: 2px solid var(--color-input);
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+
+.confirm h1 {
+    color: white;
+}
+
+.botones,
+.anuncio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.botonEliminar,
+.botonCancelar {
+    display: flex;
+    width: 200px;
+    height: 50px;
+    margin: 5px;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid white;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    background-color: var(--color-input);
+}
+
+.botonEliminar {
+    color: red;
+}
+
+.botonCancelar {
+    color: white;
+}

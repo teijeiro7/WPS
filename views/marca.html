@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title id="Principal title">WPS | {{brandName}}</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="https://i.pinimg.com/originals/74/7e/55/747e55064959e576f79edb6f2b3f5179.png"
+        type="image/png">
+    <link rel="stylesheet" href="/css/styleNav.css">
+    <link rel="stylesheet" href="/css/styleMarca.css">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+    {{> components/nav}}
+
+    <div class="padre">
+        <div class="divButtonBack">
+            <a href="/">
+                <div class="back">
+                    <i class="bi bi-arrow-left-short"></i>
+                </div>
+            </a>
+        </div>
+
+        <div class="content">
+
+            <div>
+                <img class=imagenLogoNox src={{brandImage}}>
+            </div>
+
+            <div class="textoNox">
+                <h1>{{brandName}}</h1>
+                <p><span><b class="negrita">Fundador: </b></span><span class="contenido">{{brandFounder}}</span></p>
+                <p><span><b class="negrita">Año de fundación: </b></span><span class="contenido">{{brandYear}}</span>
+                </p>
+                <p><span><b class="negrita">Jugadores: </b><span class="contenido">{{brandPlayers}}</span></p>
+                <p><span><b class="negrita">Página web: </b></span><a class="contenido" id="brandWeb"
+                        href="{{brandWeb}}">{{brandWeb}}</a></p>
+                <div class="div_button">
+                    <a href=" /{{brandName}}/edit?name={{brandName}}">
+                        <button class="boton_editar" type="submit" value="Editar" id="boton_editar">Editar</button>
+                    </a>
+                    <a href=" /{{brandName}}/confirmDelete?name={{brandName}}"><button class="boton_eliminar"
+                            id="eliminar">Eliminar</button></a>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="divPalas">
+            <div class="divNox">
+                {{#palasPrincipal}}
+                <div class="pala">
+                    <div class="responsivePalas">
+                        <div class="palaContainer">
+                            <div class="divImagenPala">
+                                <img src="{{racketImage}}" class="imagenPala" alt="{{racketName}}">
+                                <div class="unitsCounter">{{racketUnits}}</div>
+                            </div>
+                        </div>
+                        <div class="textPrice">
+                            <p class="parrafoPala"> {{racketName}}</p>
+                            <div class="divPrecioCarro">
+                                <div class="divPrecioPala">
+                                    <p class="precioPala">{{racketPrice}}€</p>
+                                </div>
+                                <button class="carritoCompra"><i class="bi bi-cart-check"
+                                        id="{{racketName}}"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                {{/palasPrincipal}}
+            </div>
+
+            {{#error}}
+            <div class="divError">
+                <h4 class="errorText">{{error}}</h4>
+            </div>
+            {{/error}}
+
+            <div class="divFormPala">
+                <div class="formCrearPala">
+                    <form action="newRacket?name={{brandName}}" method="post" class="contenidoForm">
+                        <h2 class="tituloCrearPala">Añade una nueva pala</h2>
+                        <div class="structureDiv">
+                            <div class="div_group">
+                                <label class="labelStyle">Nombre de la pala</label>
+                                <input class="cuadroTexto" type="text" name="nombrePala" placeholder="Escribe aqui">
+                            </div>
+
+                            <div class="div_group">
+                                <label class="labelStyle">Precio</label>
+                                <input class="cuadroTexto" type="number" name="precioPala" placeholder="Escribe aqui">
+                            </div>
+                        </div>
+                        <div class="structureDiv">
+                            <div class="div_group">
+                                <label class="labelStyle">Imagen</label>
+                                <input class="cuadroTexto" type="text" name="imagenPala" placeholder="Escribe aqui">
+                            </div>
+
+                            <div class="div_group">
+                                <label class="labelStyle">Unidades</label>
+                                <input class="cuadroTexto" type="number" name="palaUnits" placeholder="Escribe aqui">
+                            </div>
+                        </div>
+                        <div class="botonesForm">
+                            <input class="divBotonesFormCrearPalaSubir" type="submit" value="Subir" />
+                            <a href="/" class="divBotonesFormCrearPalaCancelar">Cancelar</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/script/scriptFormMarca.js" type="module"></script>
+    <script src="/script/scriptCarrito.js"></script>
+</body>
+
+</html>
